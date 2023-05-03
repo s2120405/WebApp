@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2023 at 06:57 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: May 03, 2023 at 06:28 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `events` (
   `Event_end` time NOT NULL,
   `Event_date` date NOT NULL,
   `type_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `events`
@@ -60,7 +60,7 @@ CREATE TABLE `eventtype` (
   `type_id` int(11) NOT NULL,
   `type_name` varchar(50) NOT NULL,
   `type_desc` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `eventtype`
@@ -84,7 +84,7 @@ CREATE TABLE `rentals` (
   `item_name` varchar(50) NOT NULL,
   `rent_price` int(100) NOT NULL,
   `item_qty` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `rentals`
@@ -114,7 +114,7 @@ CREATE TABLE `rental_transac` (
   `rental_id` int(11) NOT NULL,
   `cust_qty` int(11) NOT NULL,
   `item_total` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `rental_transac`
@@ -146,16 +146,16 @@ INSERT INTO `rental_transac` (`trans_id`, `cust_name`, `cust_no`, `cash_depo`, `
 CREATE TABLE `users1` (
   `user_id` int(50) NOT NULL,
   `user_email` varchar(50) NOT NULL,
-  `user_password` varchar(12) NOT NULL,
+  `user_password` varchar(100) NOT NULL,
   `user_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users1`
 --
 
 INSERT INTO `users1` (`user_id`, `user_email`, `user_password`, `user_name`) VALUES
-(1, 'admin1', '12345', 'admin1');
+(1, 'admin1', '827ccb0eea8a706c4c34a16891f84e7b', 'admin1');
 
 --
 -- Indexes for dumped tables
